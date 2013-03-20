@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.onedaybeard.localartificer</groupId>
+	<artifactId>local-artificer</artifactId>
+	<version>0.1.0</version>
+	<packaging>pom</packaging>
+	<name>Local Artificer</name>
+
+	<properties>
+		<admob.version>6.3.1</admob.version>
+		<artemis.lombok.version>0.11.3</artemis.lombok.version>
+		<tween.engine.version>6.3.3</tween.engine.version>
+	</properties>
+	
+	<profiles>
+		<profile>
+			<id>admob</id>
+			<modules>
+				<module>admob</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>artemis-lombok</id>
+			<modules>
+				<module>artemis-lombok</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>tween</id>
+			<modules>
+				<module>universal-tween-engine</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>all</id>
+			<modules>
+				<module>admob</module>
+				<module>artemis-lombok</module>
+				<module>universal-tween-engine</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

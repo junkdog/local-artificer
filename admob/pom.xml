@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.onedaybeard.localartificer</groupId>
+		<artifactId>local-artificer</artifactId>
+		<version>0.1.0</version>
+	</parent>
+	<artifactId>install-admob</artifactId>
+	
+	<properties>
+		<artifact.jar>GoogleAdMobAdsSdk-${admob.version}.jar</artifact.jar>
+	</properties>
+	
+	<build>
+		<!-- <defaultGoal>install:install-file</defaultGoal> -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<configuration>
+							<tasks>
+								<mkdir dir="target"/>
+								<get src="http://dl.google.com/googleadmobadssdk/googleadmobadssdkandroid.zip" dest="target/admob.zip"/>
+								<unzip src="target/admob.zip" dest="target">
+									<patternset>
+										<include name="**/${artifact.jar}"/>
+									</patternset>
+									<mapper type="flatten"/>
+								</unzip>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.3.1</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<configuration>
+							<file>${project.basedir}/target/${artifact.jar}</file>
+							<groupId>com.google.ads</groupId>
+							<artifactId>admob</artifactId>
+							<packaging>jar</packaging>
+							<version>${admob.version}</version>
+						</configuration>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
