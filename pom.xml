@@ -39,9 +39,9 @@
 			</modules>
 		</profile>
 		<profile>
-			<id>artemis-lombok</id>
+			<id>agrotera-lombok</id>
 			<modules>
-				<module>artemis-lombok</module>
+				<module>agrotera-lombok</module>
 			</modules>
 		</profile>
 		<profile>

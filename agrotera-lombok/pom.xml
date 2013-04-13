@@ -6,11 +6,26 @@
 		<artifactId>local-artificer</artifactId>
 		<version>0.1.0</version>
 	</parent>
-	<artifactId>install-artemis-lombok</artifactId>
+	<artifactId>install-agrotera-lombok</artifactId>
 	
 	<properties>
-		<artifact.jar>artemis-lombok-${artemis.lombok.version}.jar</artifact.jar>
+		<artifact.jar>agrotera-lombok.jar</artifact.jar>
 	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.github.peichhorn</groupId>
+			<artifactId>lombok-pg</artifactId>
+			<version>${artemis.lombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.peichhorn</groupId>
+			<artifactId>lombok-pg</artifactId>
+			<version>${artemis.lombok.version}</version>
+			<classifier>runtime</classifier>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
 	
 	<build>
 		<!-- <defaultGoal>install:install-file</defaultGoal> -->
