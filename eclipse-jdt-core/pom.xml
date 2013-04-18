@@ -6,10 +6,10 @@
 		<artifactId>local-artificer</artifactId>
 		<version>0.1.0</version>
 	</parent>
-	<artifactId>install-eclipse-core-runtime</artifactId>
+	<artifactId>install-eclipse-jdt-core</artifactId>
 	
 	<properties>
-		<artifact.jar>eclipse.core.runtime.jar</artifact.jar>
+		<artifact.jar>eclipse.jdt.core.jar</artifact.jar>
 	</properties>
 	
 	<build>
@@ -43,10 +43,10 @@
 						<phase>install</phase>
 						<configuration>
 							<file>${project.basedir}/target/${artifact.jar}</file>
-							<groupId>org.eclipse.jdt.core</groupId>
-							<artifactId>runtime</artifactId>
+							<groupId>org.eclipse.jdt</groupId>
+							<artifactId>core</artifactId>
 							<packaging>jar</packaging>
-							<version>${eclipse.core.runtime.version}</version>
+							<version>${eclipse.jdt.core.version}</version>
 						</configuration>
 						<goals>
 							<goal>install-file</goal>

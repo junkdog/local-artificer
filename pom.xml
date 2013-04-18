@@ -12,9 +12,9 @@
 		<admob.version>6.3.1</admob.version>
 		<agrotera.lombok.version>0.1.0-SNAPSHOT</agrotera.lombok.version>
 		<artemis.lombok.version>0.11.3</artemis.lombok.version>
-		<eclipse.core.runtime.version>3.6.0</eclipse.core.runtime.version>
-		<eclipse.equinox.common.version>3.6.0</eclipse.equinox.common.version>
+		<eclipse.jdt.core.version>3.6.0</eclipse.jdt.core.version>
 		<eclipse.jdt.ui.version>3.6.0</eclipse.jdt.ui.version>
+		<eclipse.equinox.common.version>3.6.0</eclipse.equinox.common.version>
 		<spi.version>0.2.4</spi.version>
 		<tween.engine.version>6.3.3</tween.engine.version>
 	</properties>
@@ -50,15 +50,15 @@
 			</modules>
 		</profile>
 		<profile>
-			<id>eclipse-core-runtime</id>
-			<modules>
-				<module>eclipse-core-runtime</module>
-			</modules>
-		</profile>
-		<profile>
 			<id>eclipse-equinox-common</id>
 			<modules>
 				<module>eclipse-equinox-common</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>eclipse-jdt-core</id>
+			<modules>
+				<module>eclipse-jdt-core</module>
 			</modules>
 		</profile>
 		<profile>
@@ -83,9 +83,9 @@
 			<id>all</id>
 			<modules>
 				<module>admob</module>
-				<module>artemis-lombok</module>
-				<module>eclipse-core-runtime</module>
+				<module>agrotera-lombok</module>
 				<module>eclipse-equinox-common</module>
+				<module>eclipse-jdt-core</module>
 				<module>eclipse-jdt-ui</module>
 				<module>spi</module>
 				<module>universal-tween-engine</module>
