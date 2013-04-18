@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.onedaybeard.localartificer</groupId>
+		<artifactId>local-artificer</artifactId>
+		<version>0.1.0</version>
+	</parent>
+	<artifactId>install-eclipse-equinox-common</artifactId>
+	
+	<properties>
+		<artifact.jar>eclipse.equinox.common.jar</artifact.jar>
+	</properties>
+	
+	<build>
+		<!-- <defaultGoal>install:install-file</defaultGoal> -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<configuration>
+							<tasks>
+								<mkdir dir="target"/>
+								<get src="http://projectlombok.org/ivyrepo/eclipse/org.eclipse.equinox.common_3.6.0.v20100503.jar" dest="target/${artifact.jar}"/>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.3.1</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<configuration>
+							<file>${project.basedir}/target/${artifact.jar}</file>
+							<groupId>org.eclipse.equinox</groupId>
+							<artifactId>common</artifactId>
+							<packaging>jar</packaging>
+							<version>${eclipse.equinox.common.version}</version>
+						</configuration>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
