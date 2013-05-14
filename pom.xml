@@ -9,7 +9,7 @@
 	<name>Local Artificer</name>
 
 	<properties>
-		<admob.version>6.3.1</admob.version>
+		<admob.version>6.4.1</admob.version>
 		<agrotera.lombok.version>0.1.0-SNAPSHOT</agrotera.lombok.version>
 		<artemis.lombok.version>0.11.3</artemis.lombok.version>
 		<eclipse.jdt.core.version>3.6.0</eclipse.jdt.core.version>
